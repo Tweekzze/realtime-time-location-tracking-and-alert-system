@@ -11,7 +11,7 @@
     "start": "node server.js"
   },
   "keywords": ["wildlife", "tracking", "realtime", "websocket", "simulation", "University of Engineering and Management"],
-  "author": "",
+  "author": "alok-devforge",
   "license": "MIT",
   "dependencies": {
     "cors": "^2.8.5",

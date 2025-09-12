@@ -6,7 +6,7 @@ This project is a real-time wildlife tracking and monitoring system for Universi
 
 ## 🦎 **Live Demo**
 - **URL:** [UEM Kolkata Wildlife Tracker - Live Site](https://uem-kolkata-wildlife-tracker.onrender.com) 
-- **GitHub:** [Source Code](https://github.com/faisal-shohag/realtime_location_tracking)
+- **GitHub:** [Source Code](https://github.com/alok-devforge/realtime-time-location-tracking-and-alert-system)
 - **Location:** University of Engineering and Management, Kolkata (22.5603° N, 88.4903° E)
 - **Address:** University Area, Plot No. III – B/5, New Town, Action Area – III, Kolkata, West Bengal 700156, India
 
@@ -103,7 +103,7 @@ This project is a real-time wildlife tracking and monitoring system for Universi
     ```
 2. Navigate to the project directory:
     ```bash
-    cd realtime_location_tracking
+    cd realtime-time-location-tracking-and-alert-system
     ```
 3. Install the dependencies:
     ```bash
@@ -152,7 +152,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Contact
 
-- **Author:** 
+- **Author:** alok-devforge
 - **Email:** 
 - **LinkedIn:** [alok-devforge](http://linkedin.com/in/alok-devforge)
 - **GitHub:** [alok-devforge](http://github.com/alok-devforge)

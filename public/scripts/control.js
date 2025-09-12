@@ -237,7 +237,7 @@ if (closeViewersPanel) {
     //       Notification.requestPermission();
     //   });
       
-    //   function notifyMe(title, msg, logo="https://github.com/faisal-shohag/realtime_location_tracking/blob/master/public/images/3d-navigation.png?raw=true") {
+    //   function notifyMe(title, msg, logo="https://github.com/alok-devforge/realtime-time-location-tracking-and-alert-system/blob/master/public/images/3d-navigation.png?raw=true") {
     //     if (Notification.permission !== "granted")
     //       Notification.requestPermission();
     //     else {

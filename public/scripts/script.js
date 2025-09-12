@@ -192,7 +192,7 @@ var polygonVisitor = L.polygon(visitorCenter, { color: "blue", fillColor: "light
   L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
             maxZoom: 20,
             attribution:
-            '&copy; <a target="_blank" href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> | <a traget="_blank" href="https://github.com/faisal-shohag/realtime_location_tracking">IISER Kolkata National Park</a>',
+            '&copy; <a target="_blank" href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> | <a traget="_blank" href="https://github.com/alok-devforge/realtime-time-location-tracking-and-alert-system">UEM Kolkata Wildlife Tracker</a>',
    }).addTo(map);
 
   //Map tile layer
@@ -201,7 +201,7 @@ var polygonVisitor = L.polygon(visitorCenter, { color: "blue", fillColor: "light
         L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}", {
             maxZoom: 20,
             attribution:
-            '&copy; <a target="_blank" href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> | <a traget="_blank" href="https://github.com/faisal-shohag/realtime_location_tracking">IISER Kolkata National Park</a>',
+            '&copy; <a target="_blank" href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> | <a traget="_blank" href="https://github.com/alok-devforge/realtime-time-location-tracking-and-alert-system">UEM Kolkata Wildlife Tracker</a>',
         }).addTo(map);
      viewContainer.innerHTML = '<div class="street view" id="str"></div>'
 
@@ -209,7 +209,7 @@ var polygonVisitor = L.polygon(visitorCenter, { color: "blue", fillColor: "light
         L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
             maxZoom: 20,
             attribution:
-            '&copy; <a target="_blank" href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> | <a traget="_blank" href="https://github.com/faisal-shohag/realtime_location_tracking">IISER Kolkata National Park</a>',
+            '&copy; <a target="_blank" href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> | <a traget="_blank" href="https://github.com/alok-devforge/realtime-time-location-tracking-and-alert-system">UEM Kolkata Wildlife Tracker</a>',
         }).addTo(map);
         viewContainer.innerHTML = '<div class="satellite view" id="sat"></div>'       
     }
