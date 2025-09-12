@@ -1,0 +1,30 @@
+/* Styles for username tooltips */
+
+.username-tooltip {
+    background-color: transparent;
+    border: none;
+    color: #333; /* Dark text color */
+    font-weight: bold;
+    padding: 2px 6px;
+    font-size: 14px; /* Slightly larger font for better visibility */
+    white-space: nowrap;
+    z-index: 1000;
+    text-shadow: 
+        -1px -1px 0 #fff, 
+        1px -1px 0 #fff, 
+        -1px 1px 0 #fff, 
+        1px 1px 0 #fff; /* Text outline for better visibility on any background */
+    position: relative;
+    top: -5px; /* Move the tooltip slightly up from the marker */
+}
+
+.username-tooltip:before {
+    display: none; /* Hide the tooltip arrow */
+}
+
+/* Make sure tooltip is always on top */
+.leaflet-tooltip {
+    z-index: 1000 !important;
+    pointer-events: none; /* Allow clicking through the tooltip */
+    opacity: 1 !important; /* Ensure tooltip is fully visible */
+}

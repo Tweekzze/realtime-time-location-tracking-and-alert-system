@@ -1,0 +1,21 @@
+{
+  "name": "university-engineering-management-wildlife-tracker",
+  "version": "1.0.0",
+  "description": "Real-time wildlife tracking system for University of Engineering and Management National Park with animal simulation and proximity alerts",
+  "main": "server.js",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": ["wildlife", "tracking", "realtime", "websocket", "simulation", "University of Engineering and Management"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "socket.io": "^4.7.4"
+  }
+}

@@ -1,0 +1,476 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University of Engineering and Management National Park - Wildlife Tracker</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+     <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.css" integrity="sha512-dUOcWaHA4sUKJgO7lxAQ0ugZiWjiDraYNeNJeRKGOIpEq4vroj1DpKcS3jP0K4Js4v6bXk31AAxAxaYt3Oi9xw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/tooltip.css">
+    <link rel="stylesheet" href="./styles/modern-panels.css">
+    <!-- <link rel="stylesheet" href="./public/styles/style.css"> -->
+</head>
+<body>
+
+    <!-- Top Navigation Menu -->
+    <div class="top-nav-container">
+        <div class="nav-menu-wrap">
+            <ul id="nav-menu">
+                <a class="nav-toggle" id="nav-toggle" href="#nav-menu" title="Navigation Menu"> 
+                    <i class="ri-menu-line" id="nav-icon"></i>
+                </a>
+                <li class="nav-item park-info" title="Park Information">
+                    <a href="#" onclick="return false;">
+                       <i class="ri-information-line"></i>
+                       <span class="nav-tooltip">Park Info</span>
+                    </a>
+                </li>
+                <li class="nav-item active-viewers" title="Active Viewers">
+                    <a href="#" onclick="return false;">
+                       <i class="ri-group-line"></i>
+                       <span class="nav-tooltip">Active Viewers</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="map"></div>
+    
+    <!-- Wildlife Status Panel -->
+    <div class="wildlife-status-panel">
+        <div class="status-header">
+            <i class="ri-eye-line"></i>
+            <span>Wildlife Activity</span>
+            <div class="status-indicator live"></div>
+        </div>
+        <div class="animal-count">
+            <span class="count">10</span>
+            <span class="label">Species Tracked</span>
+        </div>
+    </div>
+
+    <!-- Threat Level Indicator -->
+    <div class="threat-indicator">
+        <div class="threat-level safe" id="threat-level">
+            <i class="ri-shield-check-line"></i>
+            <span class="threat-text">SAFE ZONE</span>
+        </div>
+    </div>
+
+    <!-- Real-time Animal Alerts -->
+    <div class="animal-alerts" id="animal-alerts">
+        <!-- Dynamic alerts will appear here -->
+    </div>
+    
+    <div class="app-contents">
+        <div class="bottom-card hide"></div>
+        <div class="my-latlon"></div>
+    </div>
+
+<div class="splash">
+    <div class="landing-container">
+        <!-- Main Header -->
+        <div class="header-section">
+            <div class="logo-section">
+                <div class="logo-icon">
+                    <i class="ri-leaf-line"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>UEM Wildlife Tracker</h1>
+                    <p>University of Engineering and Management National Park</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Location Info -->
+        <div class="location-info">
+            <div class="info-item">
+                <span>New Town, Kolkata</span>
+            </div>
+            <div class="info-item">
+                <i class="ri-global-line"></i>
+                <span>22.5603°N, 88.4335°E</span>
+            </div>
+        </div>
+
+        <!-- Status Display -->
+        <div class="status-display">
+            <div class="status-item">
+                <div class="status-icon">
+                    <i class="ri-radar-line"></i>
+                </div>
+                <div class="status-content">
+                    <span class="status-label">Location Status</span>
+                    <span id="loc-state" class="status-value">Initializing GPS...</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Entry Form -->
+        <form id="form" class="entry-form hide">
+            <div class="form-header">
+                <h3>Welcome to Wildlife Sanctuary</h3>
+                <p>Enter your details to begin tracking</p>
+            </div>
+            
+            <div class="input-group">
+                <label for="username">Visitor Name</label>
+                <div class="input-wrapper">
+                    <i class="ri-user-line"></i>
+                    <input name="username" type="text" placeholder="Enter your name" required>
+                </div>
+            </div>
+
+            <div class="checkbox-group">
+                <label class="checkbox-label">
+                    <input name="check" type="checkbox" checked="checked">
+                    <span class="checkmark"></span>
+                    <span class="checkbox-text">Remember me for future visits</span>
+                </label>
+            </div>
+
+            <button type="submit" class="start-button">
+                <i class="ri-play-circle-line"></i>
+                <span>Start Wildlife Tracking</span>
+            </button>
+        </form>
+
+        <!-- Quick Stats -->
+        <div class="quick-stats">
+            <div class="stat-card">
+                <div class="stat-number">10</div>
+                <div class="stat-label">Species</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">3</div>
+                <div class="stat-label">Zones</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Monitoring</div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="landing-footer">
+            <p>Powered by Real-time Location Technology</p>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="view-container animate__animated animate__fadeInLeft">
+    <div class="satellite view" id="sat"></div>
+</div>
+  
+
+<!-- Wildlife Dashboard -->
+<div class="wildlife-dashboard" id="wildlife-dashboard">
+    <div class="dashboard-header">
+        <h3><i class="ri-bear-smile-line"></i> Live Wildlife Dashboard</h3>
+        <button class="close-dashboard"><i class="ri-close-line"></i></button>
+    </div>
+    <div class="dashboard-content">
+        <div class="animal-grid">
+            <div class="animal-card" data-animal="tiger">
+                <div class="animal-icon">🐅</div>
+                <div class="animal-info">
+                    <h4>Raja</h4>
+                    <p>Bengal Tiger</p>
+                    <span class="threat-badge high">HIGH THREAT</span>
+                </div>
+                <div class="animal-status active"></div>
+            </div>
+            <div class="animal-card" data-animal="elephant">
+                <div class="animal-icon">🐘</div>
+                <div class="animal-info">
+                    <h4>Ganesha</h4>
+                    <p>Asian Elephant</p>
+                    <span class="threat-badge high">HIGH THREAT</span>
+                </div>
+                <div class="animal-status active"></div>
+            </div>
+            <div class="animal-card" data-animal="leopard">
+                <div class="animal-icon">🐆</div>
+                <div class="animal-info">
+                    <h4>Shera</h4>
+                    <p>Indian Leopard</p>
+                    <span class="threat-badge high">HIGH THREAT</span>
+                </div>
+                <div class="animal-status active"></div>
+            </div>
+            <div class="animal-card" data-animal="slothBear">
+                <div class="animal-icon">🐻</div>
+                <div class="animal-info">
+                    <h4>Baloo</h4>
+                    <p>Sloth Bear</p>
+                    <span class="threat-badge medium">MEDIUM THREAT</span>
+                </div>
+                <div class="animal-status active"></div>
+            </div>
+            <div class="animal-card" data-animal="wildBoar">
+                <div class="animal-icon">🐗</div>
+                <div class="animal-info">
+                    <h4>Pumba</h4>
+                    <p>Wild Boar</p>
+                    <span class="threat-badge medium">MEDIUM THREAT</span>
+                </div>
+                <div class="animal-status active"></div>
+            </div>
+            <div class="animal-card" data-animal="muggerCrocodile">
+                <div class="animal-icon">🐊</div>
+                <div class="animal-info">
+                    <h4>Sobek</h4>
+                    <p>Mugger Crocodile</p>
+                    <span class="threat-badge high">HIGH THREAT</span>
+                </div>
+                <div class="animal-status active"></div>
+            </div>
+            <div class="animal-card" data-animal="rhesusMonkey">
+                <div class="animal-icon">🐒</div>
+                <div class="animal-info">
+                    <h4>Hanuman</h4>
+                    <p>Rhesus Monkey</p>
+                    <span class="threat-badge low">LOW THREAT</span>
+                </div>
+                <div class="animal-status active"></div>
+            </div>
+            <div class="animal-card" data-animal="spottedDeer">
+                <div class="animal-icon">🦌</div>
+                <div class="animal-info">
+                    <h4>Bambi</h4>
+                    <p>Spotted Deer</p>
+                    <span class="threat-badge safe">SAFE</span>
+                </div>
+                <div class="animal-status active"></div>
+            </div>
+            <div class="animal-card" data-animal="peacock">
+                <div class="animal-icon">🦚</div>
+                <div class="animal-info">
+                    <h4>Mayur</h4>
+                    <p>Indian Peacock</p>
+                    <span class="threat-badge safe">SAFE</span>
+                </div>
+                <div class="animal-status active"></div>
+            </div>
+            <div class="animal-card" data-animal="rhinoHornbill">
+                <div class="animal-icon">🦜</div>
+                <div class="animal-info">
+                    <h4>Zazu</h4>
+                    <p>Rhino Hornbill</p>
+                    <span class="threat-badge safe">SAFE</span>
+                </div>
+                <div class="animal-status active"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Park Information Panel - Modern Minimal Design -->
+<div class="park-info-panel" id="park-info-panel">
+    <div class="panel-container">
+        <div class="panel-header">
+            <div class="header-content">
+                <div class="header-icon">
+                    <i class="ri-information-line"></i>
+                </div>
+                <div class="header-text">
+                    <h3>Park Information</h3>
+                    <p class="header-subtitle">UEM Wildlife Sanctuary</p>
+                </div>
+            </div>
+            <button class="close-panel" aria-label="Close panel">
+                <i class="ri-close-line"></i>
+            </button>
+        </div>
+        
+        <div class="panel-content">
+            <!-- Key Information Section -->
+            <div class="panel-section">
+                <div class="info-list">
+                    <div class="info-row">
+                        <span class="info-icon"><i class="ri-map-pin-line"></i></span>
+                        <span class="info-text">New Town, Kolkata</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-icon"><i class="ri-focus-3-line"></i></span>
+                        <span class="info-text">22.5603° N, 88.4903° E</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-icon"><i class="ri-shield-check-line"></i></span>
+                        <span class="info-text">Wildlife Conservation Area</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Park Statistics -->
+            <div class="panel-section">
+                <h5 class="subsection-title">Park Overview</h5>
+                <div class="stats-row">
+                    <div class="stat-mini">
+                        <span class="stat-value">10</span>
+                        <span class="stat-name">Species</span>
+                    </div>
+                    <div class="stat-mini">
+                        <span class="stat-value">3</span>
+                        <span class="stat-name">Zones</span>
+                    </div>
+                    <div class="stat-mini">
+                        <span class="stat-value">24/7</span>
+                        <span class="stat-name">Monitor</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Safety Guidelines -->
+            <div class="panel-section">
+                <h5 class="subsection-title">Safety Guidelines</h5>
+                <div class="info-list">
+                    <div class="info-row">
+                        <span class="info-icon"><i class="ri-eye-line"></i></span>
+                        <span class="info-text">Keep safe distance from wildlife</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-icon"><i class="ri-user-follow-line"></i></span>
+                        <span class="info-text">Follow ranger instructions</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-icon"><i class="ri-footprint-line"></i></span>
+                        <span class="info-text">Stay on designated paths</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Park Description -->
+            <div class="panel-section">
+                <h5 class="subsection-title">About the Park</h5>
+                <p style="font-size: 13px; line-height: 1.5; color: #444; margin: 0;">
+                    UEM Wildlife Sanctuary provides a safe habitat for various endangered species. 
+                    Our real-time tracking system helps protect both wildlife and visitors while 
+                    offering an educational experience about conservation efforts.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Active Viewers Panel - Modern Minimal Design -->
+<div class="active-viewers-panel" id="active-viewers-panel">
+    <div class="panel-container">
+        <div class="panel-header">
+            <div class="header-content">
+                <div class="header-icon">
+                    <i class="ri-group-line"></i>
+                </div>
+                <div class="header-text">
+                    <h3>Active Visitors</h3>
+                    <p class="header-subtitle">Real-time Tracking</p>
+                </div>
+            </div>
+            <button class="close-viewers-panel" aria-label="Close panel">
+                <i class="ri-close-line"></i>
+            </button>
+        </div>
+        
+        <div class="panel-content">
+            <!-- Statistics Section -->
+            <div class="panel-section">
+                <div class="live-stats-simple">
+                    <div class="live-stat-simple">
+                        <div class="stat-circle primary">
+                            <span class="stat-big" id="total-viewers">0</span>
+                        </div>
+                        <span class="stat-label-simple">Online</span>
+                    </div>
+                    <div class="live-stat-simple">
+                        <div class="stat-circle secondary">
+                            <span class="stat-big" id="inside-park">0</span>
+                        </div>
+                        <span class="stat-label-simple">In Park</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Active Visitors List -->
+            <div class="panel-section">
+                <h5 class="subsection-title">Current Visitors</h5>
+                <div id="active-visitors-list" class="visitors-simple">
+                    <div class="empty-visitors">
+                        <i class="ri-user-unfollow-line"></i>
+                        <span>No active visitors currently</span>
+                    </div>
+                    <!-- Visitor entries will be added dynamically -->
+                </div>
+            </div>
+
+            <!-- Recent Activity Feed -->
+            <div class="panel-section">
+                <h5 class="subsection-title">Recent Activity</h5>
+                <div class="activity-simple" id="activity-feed">
+                    <div class="activity-row">
+                        <span class="activity-dot"></span>
+                        <div class="activity-info">
+                            <span class="activity-text">Tracking system initialized</span>
+                            <span class="activity-time">Just now</span>
+                        </div>
+                    </div>
+                    <!-- Activity entries will be added dynamically -->
+                </div>
+            </div>
+            
+            <!-- Status Info -->
+            <div class="panel-section">
+                <div class="info-list">
+                    <div class="info-row">
+                        <span class="info-icon"><i class="ri-radar-line"></i></span>
+                        <span class="info-text">Live tracking active</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-icon"><i class="ri-notification-line"></i></span>
+                        <span class="info-text">Proximity alerts enabled</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.js" integrity="sha512-tE1z+95+lMCGwy+9PnKgUSIeHhvioC9lMlI7rLWU0Ps3XTdjRygLcy4mLuL0JAoK4TLdQEyP0yOl/9dMOqpH/Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+    <script src="
+https://cdn.jsdelivr.net/npm/leaflet-geometryutil@0.10.3/src/leaflet.geometryutil.min.js
+"></script>
+
+   
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/platform/1.3.6/platform.min.js" integrity="sha512-eYPrm8TgYWg3aa6tvSRZjN4v0Z9Qx69q3RhfSj+Mf89QqwOMqmwSlsVqfp4N8NVAcZe/YeUhh9x/nM2CAOp6cA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./scripts/coords.js"></script>
+    <script src="./scripts/methods.js"></script>
+    <script src="./scripts/userMarkers.js"></script>
+    <script src="./scripts/script.js"></script>
+    <script src="./scripts/control.js"></script>
+    
+
+    <!-- <script src="./public/scripts/coords.js"></script>
+    <script src="./public/scripts/methods.js"></script>
+    <script src="./public/scripts/script.js"></script>
+    <script src="./public/scripts/control.js"></script> -->
+
+    
+    
+</body>
+</html>
