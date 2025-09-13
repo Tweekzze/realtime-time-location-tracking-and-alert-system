@@ -25,21 +25,13 @@ function main(username, ulat, ulon) {
   // Create user location marker with default Leaflet icon
   // Using default Leaflet icon for the current user
   const userIcon = new L.Icon.Default();
-  // Add username to marker tooltip for identification
-  let userTooltip = L.tooltip({
-    permanent: true,
-    direction: 'top',
-    className: 'username-tooltip',
-    offset: [0, -30] // Position tooltip above the marker
-  }).setContent(username);
 
-  // Create initial user marker
+  // Create initial user marker (no tooltip needed for current user)
   let userMarker = L.marker([ulat, ulon], { icon: userIcon })
-    .bindTooltip(userTooltip)
     .addTo(map)
     .bindPopup(`
       <div class="user-popup">
-        <h4><i class="ri-user-location-line"></i> Your Location</h4>
+        <h4><i class="ri-user-location-line"></i> Your Location (${username})</h4>
         <p><strong>Coordinates:</strong> ${ulat.toFixed(6)}, ${ulon.toFixed(6)}</p>
         <p><strong>Status:</strong> Live Tracking Active</p>
         <p><strong>Last Updated:</strong> ${new Date().toLocaleTimeString()}</p>

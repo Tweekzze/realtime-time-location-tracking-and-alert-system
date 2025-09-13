@@ -15,7 +15,7 @@ let userMarkerManager = {
         // Using default Leaflet icon for consistency
         const userIcon = new L.Icon.Default();
         
-        // Create tooltip for username
+        // Create tooltip for username (only for other users, not current user)
         const userTooltip = L.tooltip({
             permanent: true,
             direction: 'top',
